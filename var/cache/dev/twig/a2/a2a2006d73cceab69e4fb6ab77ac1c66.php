@@ -135,6 +135,6 @@ class __TwigTemplate_73f19c5fd1a3a1fc1163c2c17d9d449e extends Template
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/bag.html.twig", "/Users/ramjoh/Documents/Tricount/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/bag.html.twig");
+", "@WebProfiler/Profiler/bag.html.twig", "/Users/ramjoh/documents_local/Tricount/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/bag.html.twig");
     }
 }

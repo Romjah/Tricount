@@ -93,6 +93,6 @@ class __TwigTemplate_2cc8117066674da2a8739a0c3bbeba8d extends Template
        </form>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Users/ramjoh/Documents/Tricount/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/Users/ramjoh/documents_local/Tricount/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

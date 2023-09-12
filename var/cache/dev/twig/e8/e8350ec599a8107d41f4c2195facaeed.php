@@ -171,6 +171,6 @@ class __TwigTemplate_bac46378f046d1058c910ebd5c808fdc extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/Users/ramjoh/Documents/Tricount/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/Users/ramjoh/documents_local/Tricount/vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig");
     }
 }
