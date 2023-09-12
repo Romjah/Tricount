@@ -184,6 +184,6 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         {% block body %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Users/ramjoh/Documents/Tricount/Tricount/templates/base.html.twig");
+", "base.html.twig", "/Users/ramjoh/Documents/Tricount/templates/base.html.twig");
     }
 }
