@@ -29,7 +29,7 @@ class GroupMember
     {
         return $this->groupTricount;
     }
-
+   
     public function setGroupTricount(?Group $groupTricount): static
     {
         $this->groupTricount = $groupTricount;
