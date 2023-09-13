@@ -36,6 +36,8 @@ class Group
         return $this->id;
     }
 
+   
+
     /**
      * @return Collection<int, Expense>
      */
