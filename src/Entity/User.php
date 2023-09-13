@@ -41,9 +41,6 @@ class User
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: ExpenseParticipant::class)]
     private Collection $expenseParticipants;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: GroupMember::class)]
-    private Collection $groupMembers;
-
     #[ORM\OneToMany(mappedBy: 'payer', targetEntity: Payment::class)]
     private Collection $payments;
 
@@ -56,16 +53,19 @@ class User
     #[ORM\OneToMany(mappedBy: 'payer', targetEntity: Settlement::class)]
     private Collection $settlements;
 
+    #[ORM\ManyToMany(targetEntity: Group::class, mappedBy: 'users')]
+    private Collection $usersgroups;
+
     public function __construct()
     {
         $this->expenses = new ArrayCollection();
         $this->expenseParticipants = new ArrayCollection();
-        $this->groupMembers = new ArrayCollection();
         $this->payments = new ArrayCollection();
         $this->notifications = new ArrayCollection();
         $this->expenseComments = new ArrayCollection();
         $this->settlements = new ArrayCollection();
         $this->CreateDateTime = new DateTime();
+        $this->usersgroups = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -204,36 +204,6 @@ class User
     }
 
     /**
-     * @return Collection<int, GroupMember>
-     */
-    public function getGroupMembers(): Collection
-    {
-        return $this->groupMembers;
-    }
-
-    public function addGroupMember(GroupMember $groupMember): static
-    {
-        if (!$this->groupMembers->contains($groupMember)) {
-            $this->groupMembers->add($groupMember);
-            $groupMember->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeGroupMember(GroupMember $groupMember): static
-    {
-        if ($this->groupMembers->removeElement($groupMember)) {
-            // set the owning side to null (unless already changed)
-            if ($groupMember->getUser() === $this) {
-                $groupMember->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Payment>
      */
     public function getPayments(): Collection
@@ -348,6 +318,33 @@ class User
             if ($settlement->getPayer() === $this) {
                 $settlement->setPayer(null);
             }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Group>
+     */
+    public function getUsersgroups(): Collection
+    {
+        return $this->usersgroups;
+    }
+
+    public function addUsersgroup(Group $usersgroup): static
+    {
+        if (!$this->usersgroups->contains($usersgroup)) {
+            $this->usersgroups->add($usersgroup);
+            $usersgroup->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUsersgroup(Group $usersgroup): static
+    {
+        if ($this->usersgroups->removeElement($usersgroup)) {
+            $usersgroup->removeUser($this);
         }
 
         return $this;
