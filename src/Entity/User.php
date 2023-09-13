@@ -29,6 +29,12 @@ class User
     #[ORM\Column]
     private ?int $telephone = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $confirmPassword = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $CreateDateTime = null;
 
@@ -113,6 +119,30 @@ class User
     public function setTelephone(int $telephone): static
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getConfirmPassword(): ?string
+    {
+        return $this->confirmPassword;
+    }
+
+    public function setConfirmPassword(string $confirmPassword): static
+    {
+        $this->confirmPassword = $confirmPassword;
 
         return $this;
     }
