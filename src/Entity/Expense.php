@@ -113,6 +113,11 @@ class Expense
         return $this;
     }
 
+    public function __toString(): string
+    {
+        return $this->getDescription(); // Vous pouvez personnaliser cette méthode en fonction de vos besoins.
+    }
+    
     /**
      * @return Collection<int, ExpenseParticipant>
      */
