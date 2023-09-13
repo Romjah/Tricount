@@ -51,6 +51,7 @@ return [
     'app_group_member_show' => [['id'], ['_controller' => 'App\\Controller\\GroupMemberController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/group/member']], [], [], []],
     'app_group_member_edit' => [['id'], ['_controller' => 'App\\Controller\\GroupMemberController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/group/member']], [], [], []],
     'app_group_member_delete' => [['id'], ['_controller' => 'App\\Controller\\GroupMemberController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/group/member']], [], [], []],
+    'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'app_notification_index' => [[], ['_controller' => 'App\\Controller\\NotificationController::index'], [], [['text', '/notification/']], [], [], []],
     'app_notification_new' => [[], ['_controller' => 'App\\Controller\\NotificationController::new'], [], [['text', '/notification/new']], [], [], []],
     'app_notification_show' => [['id'], ['_controller' => 'App\\Controller\\NotificationController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/notification']], [], [], []],
