@@ -373,13 +373,6 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GroupController"/>
       </call>
     </service>
-    <service id="App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GroupMemberController"/>
-      </call>
-    </service>
     <service id="App\Controller\HomeController" class="App\Controller\HomeController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -428,9 +421,6 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\GroupType" class="App\Form\GroupType" autowire="true" autoconfigure="true">
@@ -519,7 +509,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.TSppCaY"/>
+      <argument type="service" id=".service_locator.2WqWhUw"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1389,7 +1379,6 @@
         <argument>App\Form\ExpenseCommentType</argument>
         <argument>App\Form\ExpenseParticipantType</argument>
         <argument>App\Form\ExpenseType</argument>
-        <argument>App\Form\GroupMemberType</argument>
         <argument>App\Form\GroupType</argument>
         <argument>App\Form\NotificationType</argument>
         <argument>App\Form\PaymentType</argument>
@@ -3083,7 +3072,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.TSppCaY"/>
+      <argument type="service" id=".service_locator.2WqWhUw"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -3561,7 +3550,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.x._KGj8"/>
+      <argument type="service" id=".service_locator.rMXwGlf"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6622,9 +6611,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\HomeController" class="App\Controller\HomeController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6650,8 +6636,6 @@
     <service id=".abstract.instanceof.App\Form\ExpenseParticipantType" class="App\Form\ExpenseParticipantType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GroupType" class="App\Form\GroupType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\GroupType" class="App\Form\GroupType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NotificationType" class="App\Form\NotificationType" autowire="true" abstract="true"/>
@@ -7178,25 +7162,6 @@
         <argument key="group" type="service_closure" id=".errored..service_locator.mc1icRV.App\Entity\Group"/>
       </argument>
     </service>
-    <service id=".service_locator.R6nGo5e" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="groupMemberRepository" type="service_closure" id="App\Repository\GroupMemberRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.XqAxKG9" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="groupMember" type="service_closure" id=".errored..service_locator.XqAxKG9.App\Entity\GroupMember"/>
-      </argument>
-    </service>
-    <service id=".service_locator.u12ygQi" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
-        <argument key="groupMember" type="service_closure" id=".errored..service_locator.u12ygQi.App\Entity\GroupMember"/>
-      </argument>
-    </service>
     <service id=".service_locator.eD04aH." class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7273,7 +7238,7 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.rvMNZGh.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.TSppCaY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2WqWhUw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\ExpenseAttachmentController::delete" type="service_closure" id=".service_locator.sd_FyxN"/>
@@ -7306,11 +7271,6 @@
         <argument key="App\Controller\GroupController::index" type="service_closure" id=".service_locator.da1JNxS"/>
         <argument key="App\Controller\GroupController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GroupController::show" type="service_closure" id=".service_locator.av4_g21"/>
-        <argument key="App\Controller\GroupMemberController::delete" type="service_closure" id=".service_locator.u12ygQi"/>
-        <argument key="App\Controller\GroupMemberController::edit" type="service_closure" id=".service_locator.u12ygQi"/>
-        <argument key="App\Controller\GroupMemberController::index" type="service_closure" id=".service_locator.R6nGo5e"/>
-        <argument key="App\Controller\GroupMemberController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GroupMemberController::show" type="service_closure" id=".service_locator.XqAxKG9"/>
         <argument key="App\Controller\NotificationController::delete" type="service_closure" id=".service_locator.OqTO.nA"/>
         <argument key="App\Controller\NotificationController::edit" type="service_closure" id=".service_locator.OqTO.nA"/>
         <argument key="App\Controller\NotificationController::index" type="service_closure" id=".service_locator.eD04aH."/>
@@ -7365,11 +7325,6 @@
         <argument key="App\Controller\GroupController:index" type="service_closure" id=".service_locator.da1JNxS"/>
         <argument key="App\Controller\GroupController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\GroupController:show" type="service_closure" id=".service_locator.av4_g21"/>
-        <argument key="App\Controller\GroupMemberController:delete" type="service_closure" id=".service_locator.u12ygQi"/>
-        <argument key="App\Controller\GroupMemberController:edit" type="service_closure" id=".service_locator.u12ygQi"/>
-        <argument key="App\Controller\GroupMemberController:index" type="service_closure" id=".service_locator.R6nGo5e"/>
-        <argument key="App\Controller\GroupMemberController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
-        <argument key="App\Controller\GroupMemberController:show" type="service_closure" id=".service_locator.XqAxKG9"/>
         <argument key="App\Controller\NotificationController:delete" type="service_closure" id=".service_locator.OqTO.nA"/>
         <argument key="App\Controller\NotificationController:edit" type="service_closure" id=".service_locator.OqTO.nA"/>
         <argument key="App\Controller\NotificationController:index" type="service_closure" id=".service_locator.eD04aH."/>
@@ -7547,7 +7502,7 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.x._KGj8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.rMXwGlf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ExpenseAttachmentType" type="service_closure" id="App\Form\ExpenseAttachmentType"/>
@@ -7555,7 +7510,6 @@
         <argument key="App\Form\ExpenseCommentType" type="service_closure" id="App\Form\ExpenseCommentType"/>
         <argument key="App\Form\ExpenseParticipantType" type="service_closure" id="App\Form\ExpenseParticipantType"/>
         <argument key="App\Form\ExpenseType" type="service_closure" id="App\Form\ExpenseType"/>
-        <argument key="App\Form\GroupMemberType" type="service_closure" id="App\Form\GroupMemberType"/>
         <argument key="App\Form\GroupType" type="service_closure" id="App\Form\GroupType"/>
         <argument key="App\Form\NotificationType" type="service_closure" id="App\Form\NotificationType"/>
         <argument key="App\Form\PaymentType" type="service_closure" id="App\Form\PaymentType"/>
@@ -8060,12 +8014,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.O2p6Lk7" method="withContext"/>
     </service>
-    <service id=".service_locator.O2p6Lk7.App\Controller\GroupMemberController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\GroupMemberController"/>
-      <argument>App\Controller\GroupMemberController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
-    </service>
     <service id=".service_locator.O2p6Lk7.App\Controller\HomeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\HomeController"/>
       <argument>App\Controller\HomeController</argument>
@@ -8472,12 +8420,6 @@
     </service>
     <service id=".errored..service_locator.mc1icRV.App\Entity\Group" class="App\Entity\Group">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.mc1icRV&quot;: it needs an instance of &quot;App\Entity\Group&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.XqAxKG9.App\Entity\GroupMember" class="App\Entity\GroupMember">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.XqAxKG9&quot;: it needs an instance of &quot;App\Entity\GroupMember&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
-    <service id=".errored..service_locator.u12ygQi.App\Entity\GroupMember" class="App\Entity\GroupMember">
-      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.u12ygQi&quot;: it needs an instance of &quot;App\Entity\GroupMember&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.qza7_MB.App\Entity\Notification" class="App\Entity\Notification">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.qza7_MB&quot;: it needs an instance of &quot;App\Entity\Notification&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -9473,7 +9415,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.TSppCaY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.2WqWhUw"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9500,14 +9442,13 @@
     <service id=".service_locator.UiFUZx8" alias=".service_locator.A9yhr80"/>
     <service id=".service_locator.HTQQlzn" alias=".service_locator.UEGdmNM"/>
     <service id=".service_locator.nheN83w" alias=".service_locator.mc1icRV"/>
-    <service id=".service_locator.4x9.09i" alias=".service_locator.u12ygQi"/>
     <service id=".service_locator.XMLWRE0" alias=".service_locator.OqTO.nA"/>
     <service id=".service_locator.lptY43e" alias=".service_locator.aMXBPGT"/>
     <service id=".service_locator.UuGX.Jx" alias=".service_locator.MEbEybr"/>
     <service id=".service_locator.R0Sb2kd" alias=".service_locator.rvMNZGh"/>
-    <service id=".service_locator.4n_qxbq" alias=".service_locator.TSppCaY"/>
+    <service id=".service_locator.4_yglVy" alias=".service_locator.2WqWhUw"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.zbzzQTK" alias=".service_locator.x._KGj8"/>
+    <service id=".service_locator.mW56dsX" alias=".service_locator.rMXwGlf"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -9547,9 +9488,6 @@
     <service id=".service_locator.8GsZO3Z" alias=".service_locator.da1JNxS"/>
     <service id=".service_locator.wDbmny3" alias=".service_locator.av4_g21"/>
     <service id=".service_locator.3NmEuqP" alias=".service_locator.mc1icRV"/>
-    <service id=".service_locator.oZk1tb2" alias=".service_locator.R6nGo5e"/>
-    <service id=".service_locator.Br36ls." alias=".service_locator.XqAxKG9"/>
-    <service id=".service_locator.5DArSBL" alias=".service_locator.u12ygQi"/>
     <service id=".service_locator.Ti5lv3v" alias=".service_locator.eD04aH."/>
     <service id=".service_locator.9FHrRmZ" alias=".service_locator.qza7_MB"/>
     <service id=".service_locator.FQDXlDt" alias=".service_locator.OqTO.nA"/>

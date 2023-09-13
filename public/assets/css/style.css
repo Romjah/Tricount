@@ -23,11 +23,9 @@ Text Domain: polo
 * 07.0 - Features
 * 08.0 - Gallery
 * 09.0 - Team Member
-* 10.0 - Testimonial
-* 11.0 - Subscribe
-* 12.0 - Contact us
-* 13.0 - Footer
-* 14.0 - Responsive Fixes
+* 10.0 - Contact us
+* 11.0 - Footer
+* 12.0 - Responsive Fixes
 * -----------------------------------------------------------------------------
 */
 
@@ -82,7 +80,7 @@ a:hover {
 .img_res{
     display: block;
     width: 100%;
-    height: 430px;
+    height: 400px;
     max-width: 100%;
 }
 
@@ -525,103 +523,7 @@ a:hover {
 
 
 /* ///////////////////////////////////////////////////////////////////// 
-//  10 - Testimonial
-/////////////////////////////////////////////////////////////////////*/
-
-
-#testimonial {
-    background: url(../img/testi-bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.review-star {
-    text-align: center;
-    color: rgb(255, 214, 0);
-    font-size: 30px;
-    padding-top: 20px;
-}
-.client-pic {
-    padding: 0em 2em;
-    max-width: 360px;
-    margin: 0 auto;
-}
-.client-pic img {
-    border-radius: 50%;
-}
-
-.review-desc {
-    font-size: 24px;
-    line-height: 1.8;
-    font-weight: 100;
-    font-style: italic;
-    padding-top: 20px;
-    color: #fff;
-}
-#testimonial .block-title {
-    color: #fff;
-}
-#testimonial .block-title span {
-    border-color: #fff;
-}
-p.client-name {
-    float: right;
-    font-size: 30px;
-    color: #fff;
-    display: inline-block;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 5px;
-}
-
-
-/* ///////////////////////////////////////////////////////////////////// 
-//  11 - Subscribe Section
-/////////////////////////////////////////////////////////////////////*/
-
-
-
-#subscribe {
-    background: url(../img/subs-bg.jpg);
-    padding: 100px 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.susbcribe-text {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 300;
-    padding-bottom: 30px;
-}
-.container.subscribe-wrap {
-    max-width: 600px;
-}
-#exampleInputEmail1 {
-    font-size: 20px;
-    padding: 15px 30px;
-    height: auto;
-    border: 2px solid #01bc85;
-    border-radius: 0px;
-    box-shadow: none;
-}
-.btn-custom {
-    width: 100%;
-    padding: 5px 15px;
-    font-size: 34px;
-    margin-top: 0px;
-    background: #01bc85;
-    box-shadow: none;
-    border: 2px solid #01bc85;
-    margin-left: -16px;
-    color: #fff;
-}
-.subscribe-wrap .form-group {
-    margin-right: -16px;
-}
-
-
-/* ///////////////////////////////////////////////////////////////////// 
-//  12 - Contact us Section
+//  10 - Contact us Section
 /////////////////////////////////////////////////////////////////////*/
 
 
@@ -741,7 +643,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 
 
 /* ///////////////////////////////////////////////////////////////////// 
-//  13 - Footer Section
+//  11 - Footer Section
 /////////////////////////////////////////////////////////////////////*/
 
 
@@ -778,7 +680,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 
 
 /* ///////////////////////////////////////////////////////////////////// 
-//  14 - Responsive Fixes
+//  12- Responsive Fixes
 /////////////////////////////////////////////////////////////////////*/
 
 
