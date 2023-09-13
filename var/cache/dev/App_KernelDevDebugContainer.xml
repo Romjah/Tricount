@@ -331,12 +331,112 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
+    <service id="App\Controller\ExpenseAttachmentController" class="App\Controller\ExpenseAttachmentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ExpenseAttachmentController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ExpenseCategoryController" class="App\Controller\ExpenseCategoryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ExpenseCategoryController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ExpenseCommentController" class="App\Controller\ExpenseCommentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ExpenseCommentController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ExpenseController" class="App\Controller\ExpenseController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ExpenseController"/>
+      </call>
+    </service>
+    <service id="App\Controller\ExpenseParticipantController" class="App\Controller\ExpenseParticipantController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\ExpenseParticipantController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GroupController" class="App\Controller\GroupController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GroupController"/>
+      </call>
+    </service>
+    <service id="App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\GroupMemberController"/>
+      </call>
+    </service>
+    <service id="App\Controller\NotificationController" class="App\Controller\NotificationController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\NotificationController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PaymentController" class="App\Controller\PaymentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\PaymentController"/>
+      </call>
+    </service>
+    <service id="App\Controller\SettlementController" class="App\Controller\SettlementController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\SettlementController"/>
+      </call>
+    </service>
     <service id="App\Controller\UserController" class="App\Controller\UserController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\UserController"/>
       </call>
+    </service>
+    <service id="App\Form\ExpenseAttachmentType" class="App\Form\ExpenseAttachmentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ExpenseCategoryType" class="App\Form\ExpenseCategoryType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ExpenseCommentType" class="App\Form\ExpenseCommentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ExpenseParticipantType" class="App\Form\ExpenseParticipantType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\GroupType" class="App\Form\GroupType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\NotificationType" class="App\Form\NotificationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PaymentType" class="App\Form\PaymentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SettlementType" class="App\Form\SettlementType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
@@ -412,7 +512,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.Ofm9Snb"/>
+      <argument type="service" id=".service_locator.TSppCaY"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1277,6 +1377,16 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\ExpenseAttachmentType</argument>
+        <argument>App\Form\ExpenseCategoryType</argument>
+        <argument>App\Form\ExpenseCommentType</argument>
+        <argument>App\Form\ExpenseParticipantType</argument>
+        <argument>App\Form\ExpenseType</argument>
+        <argument>App\Form\GroupMemberType</argument>
+        <argument>App\Form\GroupType</argument>
+        <argument>App\Form\NotificationType</argument>
+        <argument>App\Form\PaymentType</argument>
+        <argument>App\Form\SettlementType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -2966,7 +3076,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.Ofm9Snb"/>
+      <argument type="service" id=".service_locator.TSppCaY"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -3444,7 +3554,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.CfnR51D"/>
+      <argument type="service" id=".service_locator.x._KGj8"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6487,9 +6597,59 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExpenseAttachmentController" class="App\Controller\ExpenseAttachmentController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExpenseAttachmentController" class="App\Controller\ExpenseAttachmentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExpenseAttachmentController" class="App\Controller\ExpenseAttachmentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExpenseCategoryController" class="App\Controller\ExpenseCategoryController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExpenseCategoryController" class="App\Controller\ExpenseCategoryController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExpenseCategoryController" class="App\Controller\ExpenseCategoryController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExpenseCommentController" class="App\Controller\ExpenseCommentController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExpenseCommentController" class="App\Controller\ExpenseCommentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExpenseCommentController" class="App\Controller\ExpenseCommentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExpenseController" class="App\Controller\ExpenseController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExpenseController" class="App\Controller\ExpenseController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExpenseController" class="App\Controller\ExpenseController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ExpenseParticipantController" class="App\Controller\ExpenseParticipantController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ExpenseParticipantController" class="App\Controller\ExpenseParticipantController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ExpenseParticipantController" class="App\Controller\ExpenseParticipantController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GroupController" class="App\Controller\GroupController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GroupMemberController" class="App\Controller\GroupMemberController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\NotificationController" class="App\Controller\NotificationController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\NotificationController" class="App\Controller\NotificationController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\NotificationController" class="App\Controller\NotificationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PaymentController" class="App\Controller\PaymentController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PaymentController" class="App\Controller\PaymentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PaymentController" class="App\Controller\PaymentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SettlementController" class="App\Controller\SettlementController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SettlementController" class="App\Controller\SettlementController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SettlementController" class="App\Controller\SettlementController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserController" class="App\Controller\UserController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseAttachmentType" class="App\Form\ExpenseAttachmentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ExpenseAttachmentType" class="App\Form\ExpenseAttachmentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseCategoryType" class="App\Form\ExpenseCategoryType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ExpenseCategoryType" class="App\Form\ExpenseCategoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseCommentType" class="App\Form\ExpenseCommentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ExpenseCommentType" class="App\Form\ExpenseCommentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseParticipantType" class="App\Form\ExpenseParticipantType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ExpenseParticipantType" class="App\Form\ExpenseParticipantType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ExpenseType" class="App\Form\ExpenseType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\GroupMemberType" class="App\Form\GroupMemberType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GroupType" class="App\Form\GroupType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\GroupType" class="App\Form\GroupType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NotificationType" class="App\Form\NotificationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\NotificationType" class="App\Form\NotificationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PaymentType" class="App\Form\PaymentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PaymentType" class="App\Form\PaymentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SettlementType" class="App\Form\SettlementType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SettlementType" class="App\Form\SettlementType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserType" class="App\Form\UserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ExpenseAttachmentRepository" class="App\Repository\ExpenseAttachmentRepository" autowire="true" abstract="true"/>
@@ -6888,16 +7048,206 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.kPUOGb8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qXD.kdB" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="expenseAttachmentRepository" type="service_closure" id="App\Repository\ExpenseAttachmentRepository"/>
       </argument>
     </service>
     <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.oczsrr5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseAttachment" type="service_closure" id=".errored..service_locator.oczsrr5.App\Entity\ExpenseAttachment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.sd_FyxN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="expenseAttachment" type="service_closure" id=".errored..service_locator.sd_FyxN.App\Entity\ExpenseAttachment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.COo.cac" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseCategoryRepository" type="service_closure" id="App\Repository\ExpenseCategoryRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.GP1DvfT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseCategory" type="service_closure" id=".errored..service_locator.GP1DvfT.App\Entity\ExpenseCategory"/>
+      </argument>
+    </service>
+    <service id=".service_locator.OMP.wFe" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="expenseCategory" type="service_closure" id=".errored..service_locator.OMP.wFe.App\Entity\ExpenseCategory"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vwb.cyq" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseCommentRepository" type="service_closure" id="App\Repository\ExpenseCommentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ttn81Jt" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseComment" type="service_closure" id=".errored..service_locator.ttn81Jt.App\Entity\ExpenseComment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.hRVoOlV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="expenseComment" type="service_closure" id=".errored..service_locator.hRVoOlV.App\Entity\ExpenseComment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.UbQL_Tf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseRepository" type="service_closure" id="App\Repository\ExpenseRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.bPAXT1m" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expense" type="service_closure" id=".errored..service_locator.bPAXT1m.App\Entity\Expense"/>
+      </argument>
+    </service>
+    <service id=".service_locator.A9yhr80" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="expense" type="service_closure" id=".errored..service_locator.A9yhr80.App\Entity\Expense"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Be.5wM8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseParticipantRepository" type="service_closure" id="App\Repository\ExpenseParticipantRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.yT9VhK5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="expenseParticipant" type="service_closure" id=".errored..service_locator.yT9VhK5.App\Entity\ExpenseParticipant"/>
+      </argument>
+    </service>
+    <service id=".service_locator.UEGdmNM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="expenseParticipant" type="service_closure" id=".errored..service_locator.UEGdmNM.App\Entity\ExpenseParticipant"/>
+      </argument>
+    </service>
+    <service id=".service_locator.da1JNxS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="groupRepository" type="service_closure" id="App\Repository\GroupRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.av4_g21" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="group" type="service_closure" id=".errored..service_locator.av4_g21.App\Entity\Group"/>
+      </argument>
+    </service>
+    <service id=".service_locator.mc1icRV" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="group" type="service_closure" id=".errored..service_locator.mc1icRV.App\Entity\Group"/>
+      </argument>
+    </service>
+    <service id=".service_locator.R6nGo5e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="groupMemberRepository" type="service_closure" id="App\Repository\GroupMemberRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.XqAxKG9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="groupMember" type="service_closure" id=".errored..service_locator.XqAxKG9.App\Entity\GroupMember"/>
+      </argument>
+    </service>
+    <service id=".service_locator.u12ygQi" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="groupMember" type="service_closure" id=".errored..service_locator.u12ygQi.App\Entity\GroupMember"/>
+      </argument>
+    </service>
+    <service id=".service_locator.eD04aH." class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="notificationRepository" type="service_closure" id="App\Repository\NotificationRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.qza7_MB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="notification" type="service_closure" id=".errored..service_locator.qza7_MB.App\Entity\Notification"/>
+      </argument>
+    </service>
+    <service id=".service_locator.OqTO.nA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="notification" type="service_closure" id=".errored..service_locator.OqTO.nA.App\Entity\Notification"/>
+      </argument>
+    </service>
+    <service id=".service_locator.DcCEeyO" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="paymentRepository" type="service_closure" id="App\Repository\PaymentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Jo6MCZf" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="payment" type="service_closure" id=".errored..service_locator.Jo6MCZf.App\Entity\Payment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.aMXBPGT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="payment" type="service_closure" id=".errored..service_locator.aMXBPGT.App\Entity\Payment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MUGbC2e" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="settlementRepository" type="service_closure" id="App\Repository\SettlementRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ZpsBbBS" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="settlement" type="service_closure" id=".errored..service_locator.ZpsBbBS.App\Entity\Settlement"/>
+      </argument>
+    </service>
+    <service id=".service_locator.MEbEybr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="settlement" type="service_closure" id=".errored..service_locator.MEbEybr.App\Entity\Settlement"/>
+      </argument>
+    </service>
+    <service id=".service_locator.kPUOGb8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="userRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
     <service id=".service_locator.Hz5btge" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -6913,9 +7263,59 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.rvMNZGh.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.Ofm9Snb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.TSppCaY" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\ExpenseAttachmentController::delete" type="service_closure" id=".service_locator.sd_FyxN"/>
+        <argument key="App\Controller\ExpenseAttachmentController::edit" type="service_closure" id=".service_locator.sd_FyxN"/>
+        <argument key="App\Controller\ExpenseAttachmentController::index" type="service_closure" id=".service_locator.qXD.kdB"/>
+        <argument key="App\Controller\ExpenseAttachmentController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseAttachmentController::show" type="service_closure" id=".service_locator.oczsrr5"/>
+        <argument key="App\Controller\ExpenseCategoryController::delete" type="service_closure" id=".service_locator.OMP.wFe"/>
+        <argument key="App\Controller\ExpenseCategoryController::edit" type="service_closure" id=".service_locator.OMP.wFe"/>
+        <argument key="App\Controller\ExpenseCategoryController::index" type="service_closure" id=".service_locator.COo.cac"/>
+        <argument key="App\Controller\ExpenseCategoryController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseCategoryController::show" type="service_closure" id=".service_locator.GP1DvfT"/>
+        <argument key="App\Controller\ExpenseCommentController::delete" type="service_closure" id=".service_locator.hRVoOlV"/>
+        <argument key="App\Controller\ExpenseCommentController::edit" type="service_closure" id=".service_locator.hRVoOlV"/>
+        <argument key="App\Controller\ExpenseCommentController::index" type="service_closure" id=".service_locator.vwb.cyq"/>
+        <argument key="App\Controller\ExpenseCommentController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseCommentController::show" type="service_closure" id=".service_locator.ttn81Jt"/>
+        <argument key="App\Controller\ExpenseController::delete" type="service_closure" id=".service_locator.A9yhr80"/>
+        <argument key="App\Controller\ExpenseController::edit" type="service_closure" id=".service_locator.A9yhr80"/>
+        <argument key="App\Controller\ExpenseController::index" type="service_closure" id=".service_locator.UbQL_Tf"/>
+        <argument key="App\Controller\ExpenseController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseController::show" type="service_closure" id=".service_locator.bPAXT1m"/>
+        <argument key="App\Controller\ExpenseParticipantController::delete" type="service_closure" id=".service_locator.UEGdmNM"/>
+        <argument key="App\Controller\ExpenseParticipantController::edit" type="service_closure" id=".service_locator.UEGdmNM"/>
+        <argument key="App\Controller\ExpenseParticipantController::index" type="service_closure" id=".service_locator.Be.5wM8"/>
+        <argument key="App\Controller\ExpenseParticipantController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseParticipantController::show" type="service_closure" id=".service_locator.yT9VhK5"/>
+        <argument key="App\Controller\GroupController::delete" type="service_closure" id=".service_locator.mc1icRV"/>
+        <argument key="App\Controller\GroupController::edit" type="service_closure" id=".service_locator.mc1icRV"/>
+        <argument key="App\Controller\GroupController::index" type="service_closure" id=".service_locator.da1JNxS"/>
+        <argument key="App\Controller\GroupController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\GroupController::show" type="service_closure" id=".service_locator.av4_g21"/>
+        <argument key="App\Controller\GroupMemberController::delete" type="service_closure" id=".service_locator.u12ygQi"/>
+        <argument key="App\Controller\GroupMemberController::edit" type="service_closure" id=".service_locator.u12ygQi"/>
+        <argument key="App\Controller\GroupMemberController::index" type="service_closure" id=".service_locator.R6nGo5e"/>
+        <argument key="App\Controller\GroupMemberController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\GroupMemberController::show" type="service_closure" id=".service_locator.XqAxKG9"/>
+        <argument key="App\Controller\NotificationController::delete" type="service_closure" id=".service_locator.OqTO.nA"/>
+        <argument key="App\Controller\NotificationController::edit" type="service_closure" id=".service_locator.OqTO.nA"/>
+        <argument key="App\Controller\NotificationController::index" type="service_closure" id=".service_locator.eD04aH."/>
+        <argument key="App\Controller\NotificationController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\NotificationController::show" type="service_closure" id=".service_locator.qza7_MB"/>
+        <argument key="App\Controller\PaymentController::delete" type="service_closure" id=".service_locator.aMXBPGT"/>
+        <argument key="App\Controller\PaymentController::edit" type="service_closure" id=".service_locator.aMXBPGT"/>
+        <argument key="App\Controller\PaymentController::index" type="service_closure" id=".service_locator.DcCEeyO"/>
+        <argument key="App\Controller\PaymentController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\PaymentController::show" type="service_closure" id=".service_locator.Jo6MCZf"/>
+        <argument key="App\Controller\SettlementController::delete" type="service_closure" id=".service_locator.MEbEybr"/>
+        <argument key="App\Controller\SettlementController::edit" type="service_closure" id=".service_locator.MEbEybr"/>
+        <argument key="App\Controller\SettlementController::index" type="service_closure" id=".service_locator.MUGbC2e"/>
+        <argument key="App\Controller\SettlementController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\SettlementController::show" type="service_closure" id=".service_locator.ZpsBbBS"/>
         <argument key="App\Controller\UserController::delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\UserController::edit" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\UserController::index" type="service_closure" id=".service_locator.kPUOGb8"/>
@@ -6925,6 +7325,56 @@
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
+        <argument key="App\Controller\ExpenseAttachmentController:delete" type="service_closure" id=".service_locator.sd_FyxN"/>
+        <argument key="App\Controller\ExpenseAttachmentController:edit" type="service_closure" id=".service_locator.sd_FyxN"/>
+        <argument key="App\Controller\ExpenseAttachmentController:index" type="service_closure" id=".service_locator.qXD.kdB"/>
+        <argument key="App\Controller\ExpenseAttachmentController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseAttachmentController:show" type="service_closure" id=".service_locator.oczsrr5"/>
+        <argument key="App\Controller\ExpenseCategoryController:delete" type="service_closure" id=".service_locator.OMP.wFe"/>
+        <argument key="App\Controller\ExpenseCategoryController:edit" type="service_closure" id=".service_locator.OMP.wFe"/>
+        <argument key="App\Controller\ExpenseCategoryController:index" type="service_closure" id=".service_locator.COo.cac"/>
+        <argument key="App\Controller\ExpenseCategoryController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseCategoryController:show" type="service_closure" id=".service_locator.GP1DvfT"/>
+        <argument key="App\Controller\ExpenseCommentController:delete" type="service_closure" id=".service_locator.hRVoOlV"/>
+        <argument key="App\Controller\ExpenseCommentController:edit" type="service_closure" id=".service_locator.hRVoOlV"/>
+        <argument key="App\Controller\ExpenseCommentController:index" type="service_closure" id=".service_locator.vwb.cyq"/>
+        <argument key="App\Controller\ExpenseCommentController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseCommentController:show" type="service_closure" id=".service_locator.ttn81Jt"/>
+        <argument key="App\Controller\ExpenseController:delete" type="service_closure" id=".service_locator.A9yhr80"/>
+        <argument key="App\Controller\ExpenseController:edit" type="service_closure" id=".service_locator.A9yhr80"/>
+        <argument key="App\Controller\ExpenseController:index" type="service_closure" id=".service_locator.UbQL_Tf"/>
+        <argument key="App\Controller\ExpenseController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseController:show" type="service_closure" id=".service_locator.bPAXT1m"/>
+        <argument key="App\Controller\ExpenseParticipantController:delete" type="service_closure" id=".service_locator.UEGdmNM"/>
+        <argument key="App\Controller\ExpenseParticipantController:edit" type="service_closure" id=".service_locator.UEGdmNM"/>
+        <argument key="App\Controller\ExpenseParticipantController:index" type="service_closure" id=".service_locator.Be.5wM8"/>
+        <argument key="App\Controller\ExpenseParticipantController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\ExpenseParticipantController:show" type="service_closure" id=".service_locator.yT9VhK5"/>
+        <argument key="App\Controller\GroupController:delete" type="service_closure" id=".service_locator.mc1icRV"/>
+        <argument key="App\Controller\GroupController:edit" type="service_closure" id=".service_locator.mc1icRV"/>
+        <argument key="App\Controller\GroupController:index" type="service_closure" id=".service_locator.da1JNxS"/>
+        <argument key="App\Controller\GroupController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\GroupController:show" type="service_closure" id=".service_locator.av4_g21"/>
+        <argument key="App\Controller\GroupMemberController:delete" type="service_closure" id=".service_locator.u12ygQi"/>
+        <argument key="App\Controller\GroupMemberController:edit" type="service_closure" id=".service_locator.u12ygQi"/>
+        <argument key="App\Controller\GroupMemberController:index" type="service_closure" id=".service_locator.R6nGo5e"/>
+        <argument key="App\Controller\GroupMemberController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\GroupMemberController:show" type="service_closure" id=".service_locator.XqAxKG9"/>
+        <argument key="App\Controller\NotificationController:delete" type="service_closure" id=".service_locator.OqTO.nA"/>
+        <argument key="App\Controller\NotificationController:edit" type="service_closure" id=".service_locator.OqTO.nA"/>
+        <argument key="App\Controller\NotificationController:index" type="service_closure" id=".service_locator.eD04aH."/>
+        <argument key="App\Controller\NotificationController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\NotificationController:show" type="service_closure" id=".service_locator.qza7_MB"/>
+        <argument key="App\Controller\PaymentController:delete" type="service_closure" id=".service_locator.aMXBPGT"/>
+        <argument key="App\Controller\PaymentController:edit" type="service_closure" id=".service_locator.aMXBPGT"/>
+        <argument key="App\Controller\PaymentController:index" type="service_closure" id=".service_locator.DcCEeyO"/>
+        <argument key="App\Controller\PaymentController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\PaymentController:show" type="service_closure" id=".service_locator.Jo6MCZf"/>
+        <argument key="App\Controller\SettlementController:delete" type="service_closure" id=".service_locator.MEbEybr"/>
+        <argument key="App\Controller\SettlementController:edit" type="service_closure" id=".service_locator.MEbEybr"/>
+        <argument key="App\Controller\SettlementController:index" type="service_closure" id=".service_locator.MUGbC2e"/>
+        <argument key="App\Controller\SettlementController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
+        <argument key="App\Controller\SettlementController:show" type="service_closure" id=".service_locator.ZpsBbBS"/>
         <argument key="App\Controller\UserController:delete" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\UserController:edit" type="service_closure" id=".service_locator.rvMNZGh"/>
         <argument key="App\Controller\UserController:index" type="service_closure" id=".service_locator.kPUOGb8"/>
@@ -7087,9 +7537,19 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.CfnR51D" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.x._KGj8" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\ExpenseAttachmentType" type="service_closure" id="App\Form\ExpenseAttachmentType"/>
+        <argument key="App\Form\ExpenseCategoryType" type="service_closure" id="App\Form\ExpenseCategoryType"/>
+        <argument key="App\Form\ExpenseCommentType" type="service_closure" id="App\Form\ExpenseCommentType"/>
+        <argument key="App\Form\ExpenseParticipantType" type="service_closure" id="App\Form\ExpenseParticipantType"/>
+        <argument key="App\Form\ExpenseType" type="service_closure" id="App\Form\ExpenseType"/>
+        <argument key="App\Form\GroupMemberType" type="service_closure" id="App\Form\GroupMemberType"/>
+        <argument key="App\Form\GroupType" type="service_closure" id="App\Form\GroupType"/>
+        <argument key="App\Form\NotificationType" type="service_closure" id="App\Form\NotificationType"/>
+        <argument key="App\Form\PaymentType" type="service_closure" id="App\Form\PaymentType"/>
+        <argument key="App\Form\SettlementType" type="service_closure" id="App\Form\SettlementType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
@@ -7554,6 +8014,66 @@
         <argument key="web_link.http_header_serializer" type="service_closure" id="web_link.http_header_serializer" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ExpenseAttachmentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExpenseAttachmentController"/>
+      <argument>App\Controller\ExpenseAttachmentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ExpenseCategoryController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExpenseCategoryController"/>
+      <argument>App\Controller\ExpenseCategoryController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ExpenseCommentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExpenseCommentController"/>
+      <argument>App\Controller\ExpenseCommentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ExpenseController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExpenseController"/>
+      <argument>App\Controller\ExpenseController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\ExpenseParticipantController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ExpenseParticipantController"/>
+      <argument>App\Controller\ExpenseParticipantController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\GroupController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GroupController"/>
+      <argument>App\Controller\GroupController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\GroupMemberController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GroupMemberController"/>
+      <argument>App\Controller\GroupMemberController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\NotificationController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\NotificationController"/>
+      <argument>App\Controller\NotificationController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\PaymentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\PaymentController"/>
+      <argument>App\Controller\PaymentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\SettlementController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SettlementController"/>
+      <argument>App\Controller\SettlementController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
     <service id=".service_locator.O2p6Lk7.App\Controller\UserController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\UserController"/>
       <argument>App\Controller\UserController</argument>
@@ -7900,6 +8420,66 @@
     <service id="debug.security.event_dispatcher.main.inner" class="Symfony\Component\EventDispatcher\EventDispatcher"/>
     <service id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.y4_Zrx.&quot;: it needs an instance of &quot;Symfony\Component\Config\Loader\LoaderInterface&quot; but this type has been excluded from autowiring."/>
+    </service>
+    <service id=".errored..service_locator.oczsrr5.App\Entity\ExpenseAttachment" class="App\Entity\ExpenseAttachment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.oczsrr5&quot;: it needs an instance of &quot;App\Entity\ExpenseAttachment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.sd_FyxN.App\Entity\ExpenseAttachment" class="App\Entity\ExpenseAttachment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.sd_FyxN&quot;: it needs an instance of &quot;App\Entity\ExpenseAttachment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.GP1DvfT.App\Entity\ExpenseCategory" class="App\Entity\ExpenseCategory">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.GP1DvfT&quot;: it needs an instance of &quot;App\Entity\ExpenseCategory&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.OMP.wFe.App\Entity\ExpenseCategory" class="App\Entity\ExpenseCategory">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.OMP.wFe&quot;: it needs an instance of &quot;App\Entity\ExpenseCategory&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.ttn81Jt.App\Entity\ExpenseComment" class="App\Entity\ExpenseComment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.ttn81Jt&quot;: it needs an instance of &quot;App\Entity\ExpenseComment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.hRVoOlV.App\Entity\ExpenseComment" class="App\Entity\ExpenseComment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.hRVoOlV&quot;: it needs an instance of &quot;App\Entity\ExpenseComment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.bPAXT1m.App\Entity\Expense" class="App\Entity\Expense">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.bPAXT1m&quot;: it needs an instance of &quot;App\Entity\Expense&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.A9yhr80.App\Entity\Expense" class="App\Entity\Expense">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.A9yhr80&quot;: it needs an instance of &quot;App\Entity\Expense&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.yT9VhK5.App\Entity\ExpenseParticipant" class="App\Entity\ExpenseParticipant">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.yT9VhK5&quot;: it needs an instance of &quot;App\Entity\ExpenseParticipant&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.UEGdmNM.App\Entity\ExpenseParticipant" class="App\Entity\ExpenseParticipant">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.UEGdmNM&quot;: it needs an instance of &quot;App\Entity\ExpenseParticipant&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.av4_g21.App\Entity\Group" class="App\Entity\Group">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.av4_g21&quot;: it needs an instance of &quot;App\Entity\Group&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.mc1icRV.App\Entity\Group" class="App\Entity\Group">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.mc1icRV&quot;: it needs an instance of &quot;App\Entity\Group&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.XqAxKG9.App\Entity\GroupMember" class="App\Entity\GroupMember">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.XqAxKG9&quot;: it needs an instance of &quot;App\Entity\GroupMember&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.u12ygQi.App\Entity\GroupMember" class="App\Entity\GroupMember">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.u12ygQi&quot;: it needs an instance of &quot;App\Entity\GroupMember&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.qza7_MB.App\Entity\Notification" class="App\Entity\Notification">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.qza7_MB&quot;: it needs an instance of &quot;App\Entity\Notification&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.OqTO.nA.App\Entity\Notification" class="App\Entity\Notification">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.OqTO.nA&quot;: it needs an instance of &quot;App\Entity\Notification&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.Jo6MCZf.App\Entity\Payment" class="App\Entity\Payment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Jo6MCZf&quot;: it needs an instance of &quot;App\Entity\Payment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.aMXBPGT.App\Entity\Payment" class="App\Entity\Payment">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.aMXBPGT&quot;: it needs an instance of &quot;App\Entity\Payment&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.ZpsBbBS.App\Entity\Settlement" class="App\Entity\Settlement">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.ZpsBbBS&quot;: it needs an instance of &quot;App\Entity\Settlement&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.MEbEybr.App\Entity\Settlement" class="App\Entity\Settlement">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.MEbEybr&quot;: it needs an instance of &quot;App\Entity\Settlement&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".errored..service_locator.Hz5btge.App\Entity\User" class="App\Entity\User">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.Hz5btge&quot;: it needs an instance of &quot;App\Entity\User&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
@@ -8877,7 +9457,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Ofm9Snb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.TSppCaY"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -8898,10 +9478,20 @@
     <service id=".service_locator.80edgLI" alias="messenger.receiver_locator"/>
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.o.uf2zi" alias=".service_locator.7nzbL4K"/>
+    <service id=".service_locator.K6x1NPB" alias=".service_locator.sd_FyxN"/>
+    <service id=".service_locator.IqDY9R2" alias=".service_locator.OMP.wFe"/>
+    <service id=".service_locator.YkWtKdk" alias=".service_locator.hRVoOlV"/>
+    <service id=".service_locator.UiFUZx8" alias=".service_locator.A9yhr80"/>
+    <service id=".service_locator.HTQQlzn" alias=".service_locator.UEGdmNM"/>
+    <service id=".service_locator.nheN83w" alias=".service_locator.mc1icRV"/>
+    <service id=".service_locator.4x9.09i" alias=".service_locator.u12ygQi"/>
+    <service id=".service_locator.XMLWRE0" alias=".service_locator.OqTO.nA"/>
+    <service id=".service_locator.lptY43e" alias=".service_locator.aMXBPGT"/>
+    <service id=".service_locator.UuGX.Jx" alias=".service_locator.MEbEybr"/>
     <service id=".service_locator.R0Sb2kd" alias=".service_locator.rvMNZGh"/>
-    <service id=".service_locator.wH6j4rw" alias=".service_locator.Ofm9Snb"/>
+    <service id=".service_locator.4n_qxbq" alias=".service_locator.TSppCaY"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.GRReuIi" alias=".service_locator.CfnR51D"/>
+    <service id=".service_locator.zbzzQTK" alias=".service_locator.x._KGj8"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -8922,8 +9512,38 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
-    <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
+    <service id=".service_locator.HzRn.RC" alias=".service_locator.qXD.kdB"/>
     <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
+    <service id=".service_locator.Vo152OH" alias=".service_locator.oczsrr5"/>
+    <service id=".service_locator.FIJa.24" alias=".service_locator.sd_FyxN"/>
+    <service id=".service_locator.lSIuXK." alias=".service_locator.COo.cac"/>
+    <service id=".service_locator.oprKBhO" alias=".service_locator.GP1DvfT"/>
+    <service id=".service_locator.XT_IEHk" alias=".service_locator.OMP.wFe"/>
+    <service id=".service_locator.cmxB6UB" alias=".service_locator.vwb.cyq"/>
+    <service id=".service_locator.PvxEYRr" alias=".service_locator.ttn81Jt"/>
+    <service id=".service_locator.g2vy.Qt" alias=".service_locator.hRVoOlV"/>
+    <service id=".service_locator.uUqP7iD" alias=".service_locator.UbQL_Tf"/>
+    <service id=".service_locator.WSrB2Xc" alias=".service_locator.bPAXT1m"/>
+    <service id=".service_locator.vMJCEhm" alias=".service_locator.A9yhr80"/>
+    <service id=".service_locator.LCBSNeO" alias=".service_locator.Be.5wM8"/>
+    <service id=".service_locator.f3L6rL6" alias=".service_locator.yT9VhK5"/>
+    <service id=".service_locator.G3rIhkd" alias=".service_locator.UEGdmNM"/>
+    <service id=".service_locator.8GsZO3Z" alias=".service_locator.da1JNxS"/>
+    <service id=".service_locator.wDbmny3" alias=".service_locator.av4_g21"/>
+    <service id=".service_locator.3NmEuqP" alias=".service_locator.mc1icRV"/>
+    <service id=".service_locator.oZk1tb2" alias=".service_locator.R6nGo5e"/>
+    <service id=".service_locator.Br36ls." alias=".service_locator.XqAxKG9"/>
+    <service id=".service_locator.5DArSBL" alias=".service_locator.u12ygQi"/>
+    <service id=".service_locator.Ti5lv3v" alias=".service_locator.eD04aH."/>
+    <service id=".service_locator.9FHrRmZ" alias=".service_locator.qza7_MB"/>
+    <service id=".service_locator.FQDXlDt" alias=".service_locator.OqTO.nA"/>
+    <service id=".service_locator.kTFi4BJ" alias=".service_locator.DcCEeyO"/>
+    <service id=".service_locator.yDshAfW" alias=".service_locator.Jo6MCZf"/>
+    <service id=".service_locator.soqrceg" alias=".service_locator.aMXBPGT"/>
+    <service id=".service_locator.fXFIk77" alias=".service_locator.MUGbC2e"/>
+    <service id=".service_locator.KpDcRau" alias=".service_locator.ZpsBbBS"/>
+    <service id=".service_locator.S1wElHg" alias=".service_locator.MEbEybr"/>
+    <service id=".service_locator.025Wi8b" alias=".service_locator.kPUOGb8"/>
     <service id=".service_locator.EmZ4cZI" alias=".service_locator.Hz5btge"/>
     <service id=".service_locator.ICTRhpx" alias=".service_locator.rvMNZGh"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.O2p6Lk7"/>

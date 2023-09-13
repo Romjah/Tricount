@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New GroupMember{% endblock %}
+
+{% block body %}
+    <h1>Create new GroupMember</h1>
+
+    {{ include('group_member/_form.html.twig') }}
+
+    <a href="{{ path('app_group_member_index') }}">back to list</a>
+{% endblock %}

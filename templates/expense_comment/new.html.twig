@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ExpenseComment{% endblock %}
+
+{% block body %}
+    <h1>Create new ExpenseComment</h1>
+
+    {{ include('expense_comment/_form.html.twig') }}
+
+    <a href="{{ path('app_expense_comment_index') }}">back to list</a>
+{% endblock %}

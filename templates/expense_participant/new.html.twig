@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ExpenseParticipant{% endblock %}
+
+{% block body %}
+    <h1>Create new ExpenseParticipant</h1>
+
+    {{ include('expense_participant/_form.html.twig') }}
+
+    <a href="{{ path('app_expense_participant_index') }}">back to list</a>
+{% endblock %}
