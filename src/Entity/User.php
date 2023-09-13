@@ -3,13 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
+#[ORM\HasLifecycleCallbacks()]
 class User
 {
     #[ORM\Id]
@@ -62,6 +65,7 @@ class User
         $this->notifications = new ArrayCollection();
         $this->expenseComments = new ArrayCollection();
         $this->settlements = new ArrayCollection();
+        $this->CreateDateTime = new DateTime();
     }
 
     public function getId(): ?int
@@ -117,22 +121,28 @@ class User
         return $this;
     }
 
-    public function getCreateDateTime(): ?\DateTimeInterface
+    public function getCreateDateTime(): ?DateTime
     {
         return $this->CreateDateTime;
     }
 
-    public function setCreateDateTime(\DateTimeInterface $CreateDateTime): static
+    public function setCreateDateTime(DateTime $CreateDateTime): static
     {
         $this->CreateDateTime = $CreateDateTime;
 
         return $this;
     }
+
+    public function preUpdate(): void
+    {
+        $this->CreateDateTime = new \DateTime();
+    }
+
     public function __toString(): string
     {
         return $this->getFirstName() . ' ' . $this->getName();
     }
-    
+
     /**
      * @return Collection<int, Expense>
      */
