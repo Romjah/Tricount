@@ -25,7 +25,7 @@ return [
         '/expense/participant/new' => [[['_route' => 'app_expense_participant_new', '_controller' => 'App\\Controller\\ExpenseParticipantController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/group' => [[['_route' => 'app_group_index', '_controller' => 'App\\Controller\\GroupController::index'], null, ['GET' => 0], null, true, false, null]],
         '/group/new' => [[['_route' => 'app_group_new', '_controller' => 'App\\Controller\\GroupController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/group/member/new' => [[['_route' => 'app_group_member_new', '_controller' => 'App\\Controller\\GroupMemberController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/notification' => [[['_route' => 'app_notification_index', '_controller' => 'App\\Controller\\NotificationController::index'], null, ['GET' => 0], null, true, false, null]],
         '/notification/new' => [[['_route' => 'app_notification_new', '_controller' => 'App\\Controller\\NotificationController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/payment' => [[['_route' => 'app_payment_index', '_controller' => 'App\\Controller\\PaymentController::index'], null, ['GET' => 0], null, true, false, null]],
@@ -84,40 +84,30 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/group/(?'
-                    .'|([^/]++)(?'
-                        .'|(*:463)'
-                        .'|/edit(*:476)'
-                        .'|(*:484)'
-                    .')'
-                    .'|member(?'
-                        .'|(*:502)'
-                        .'|/([^/]++)(?'
-                            .'|(*:522)'
-                            .'|/edit(*:535)'
-                            .'|(*:543)'
-                        .')'
-                    .')'
+                .'|/group/([^/]++)(?'
+                    .'|(*:460)'
+                    .'|/edit(*:473)'
+                    .'|(*:481)'
                 .')'
                 .'|/notification/([^/]++)(?'
-                    .'|(*:579)'
-                    .'|/edit(*:592)'
-                    .'|(*:600)'
+                    .'|(*:515)'
+                    .'|/edit(*:528)'
+                    .'|(*:536)'
                 .')'
                 .'|/payment/([^/]++)(?'
-                    .'|(*:629)'
-                    .'|/edit(*:642)'
-                    .'|(*:650)'
+                    .'|(*:565)'
+                    .'|/edit(*:578)'
+                    .'|(*:586)'
                 .')'
                 .'|/settlement/([^/]++)(?'
-                    .'|(*:682)'
-                    .'|/edit(*:695)'
-                    .'|(*:703)'
+                    .'|(*:618)'
+                    .'|/edit(*:631)'
+                    .'|(*:639)'
                 .')'
                 .'|/user/([^/]++)(?'
-                    .'|(*:729)'
-                    .'|/edit(*:742)'
-                    .'|(*:750)'
+                    .'|(*:665)'
+                    .'|/edit(*:678)'
+                    .'|(*:686)'
                 .')'
             .')/?$}sDu',
     ],
@@ -145,25 +135,21 @@ return [
         410 => [[['_route' => 'app_expense_participant_show', '_controller' => 'App\\Controller\\ExpenseParticipantController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         423 => [[['_route' => 'app_expense_participant_edit', '_controller' => 'App\\Controller\\ExpenseParticipantController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         431 => [[['_route' => 'app_expense_participant_delete', '_controller' => 'App\\Controller\\ExpenseParticipantController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        463 => [[['_route' => 'app_group_show', '_controller' => 'App\\Controller\\GroupController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        476 => [[['_route' => 'app_group_edit', '_controller' => 'App\\Controller\\GroupController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        484 => [[['_route' => 'app_group_delete', '_controller' => 'App\\Controller\\GroupController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        502 => [[['_route' => 'app_group_member_index', '_controller' => 'App\\Controller\\GroupMemberController::index'], [], ['GET' => 0], null, true, false, null]],
-        522 => [[['_route' => 'app_group_member_show', '_controller' => 'App\\Controller\\GroupMemberController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        535 => [[['_route' => 'app_group_member_edit', '_controller' => 'App\\Controller\\GroupMemberController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        543 => [[['_route' => 'app_group_member_delete', '_controller' => 'App\\Controller\\GroupMemberController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        579 => [[['_route' => 'app_notification_show', '_controller' => 'App\\Controller\\NotificationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        592 => [[['_route' => 'app_notification_edit', '_controller' => 'App\\Controller\\NotificationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        600 => [[['_route' => 'app_notification_delete', '_controller' => 'App\\Controller\\NotificationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        629 => [[['_route' => 'app_payment_show', '_controller' => 'App\\Controller\\PaymentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        642 => [[['_route' => 'app_payment_edit', '_controller' => 'App\\Controller\\PaymentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        650 => [[['_route' => 'app_payment_delete', '_controller' => 'App\\Controller\\PaymentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        682 => [[['_route' => 'app_settlement_show', '_controller' => 'App\\Controller\\SettlementController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        695 => [[['_route' => 'app_settlement_edit', '_controller' => 'App\\Controller\\SettlementController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        703 => [[['_route' => 'app_settlement_delete', '_controller' => 'App\\Controller\\SettlementController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        729 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        742 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        750 => [
+        460 => [[['_route' => 'app_group_show', '_controller' => 'App\\Controller\\GroupController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        473 => [[['_route' => 'app_group_edit', '_controller' => 'App\\Controller\\GroupController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        481 => [[['_route' => 'app_group_delete', '_controller' => 'App\\Controller\\GroupController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        515 => [[['_route' => 'app_notification_show', '_controller' => 'App\\Controller\\NotificationController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        528 => [[['_route' => 'app_notification_edit', '_controller' => 'App\\Controller\\NotificationController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        536 => [[['_route' => 'app_notification_delete', '_controller' => 'App\\Controller\\NotificationController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        565 => [[['_route' => 'app_payment_show', '_controller' => 'App\\Controller\\PaymentController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        578 => [[['_route' => 'app_payment_edit', '_controller' => 'App\\Controller\\PaymentController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        586 => [[['_route' => 'app_payment_delete', '_controller' => 'App\\Controller\\PaymentController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        618 => [[['_route' => 'app_settlement_show', '_controller' => 'App\\Controller\\SettlementController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        631 => [[['_route' => 'app_settlement_edit', '_controller' => 'App\\Controller\\SettlementController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        639 => [[['_route' => 'app_settlement_delete', '_controller' => 'App\\Controller\\SettlementController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        665 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        678 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        686 => [
             [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

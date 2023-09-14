@@ -22,13 +22,13 @@ class Group
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'groupTricount', targetEntity: GroupMember::class)]
-    private Collection $groupMembers;
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'usersgroups')]
+    private Collection $users;
 
     public function __construct()
     {
         $this->expenses = new ArrayCollection();
-        $this->groupMembers = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -81,31 +81,25 @@ class Group
     }
 
     /**
-     * @return Collection<int, GroupMember>
+     * @return Collection<int, User>
      */
-    public function getGroupMembers(): Collection
+    public function getUsers(): Collection
     {
-        return $this->groupMembers;
+        return $this->users;
     }
 
-    public function addGroupMember(GroupMember $groupMember): static
+    public function addUser(User $user): static
     {
-        if (!$this->groupMembers->contains($groupMember)) {
-            $this->groupMembers->add($groupMember);
-            $groupMember->setGroupTricount($this);
+        if (!$this->users->contains($user)) {
+            $this->users->add($user);
         }
 
         return $this;
     }
 
-    public function removeGroupMember(GroupMember $groupMember): static
+    public function removeUser(User $user): static
     {
-        if ($this->groupMembers->removeElement($groupMember)) {
-            // set the owning side to null (unless already changed)
-            if ($groupMember->getGroupTricount() === $this) {
-                $groupMember->setGroupTricount(null);
-            }
-        }
+        $this->users->removeElement($user);
 
         return $this;
     }
