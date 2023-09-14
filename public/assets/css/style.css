@@ -213,6 +213,9 @@ a:hover {
     text-decoration: none;
 }
 
+.sidebar-nav li a i {
+    font-size: 1.5em;
+}
 .sidebar-nav > .sidebar-brand {
     height: 55px;
     font-size: 18px;
@@ -404,7 +407,7 @@ a:hover {
 
 
 #gallery{
-    background: url(../img/gallery-bg.png) no-repeat;
+    background: url(../img/gallery-bg.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
