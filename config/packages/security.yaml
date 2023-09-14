@@ -10,6 +10,12 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800 # 1 semaine en secondes
+                path:     /
+                name:     REMEMBERME_COOKIE
+                always_remember_me: true
             lazy: true
             provider: users_in_memory
 

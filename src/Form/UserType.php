@@ -3,8 +3,10 @@
 namespace App\Form;
 
 use App\Entity\User;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class UserType extends AbstractType
@@ -16,7 +18,13 @@ class UserType extends AbstractType
             ->add('firstName')
             ->add('email')
             ->add('telephone')
+            ->add('password')
+            ->add('confirmPassword')
             ->add('CreateDateTime')
+            ->add('remember_me', CheckboxType::class, [ 
+                'label' => ' ',
+                'required' => false,
+            ])
         ;
     }
 

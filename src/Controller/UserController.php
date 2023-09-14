@@ -22,6 +22,16 @@ class UserController extends AbstractController
         ]);
     }
 
+    #[Route('/account', name: 'app_user_account')]
+    public function account(): Response
+    {
+        $currentUser = $this->getUser();
+    
+        return $this->render('user/account.html.twig', [
+            'currentUser' => $currentUser,
+        ]);
+    }         
+
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -37,6 +47,26 @@ class UserController extends AbstractController
         }
 
         return $this->render('user/new.html.twig', [
+            'user' => $user,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/login', name: 'app_user_login', methods: ['GET', 'POST'])]
+    public function login(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $user = new User();
+        $form = $this->createForm(UserType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('user/login.html.twig', [
             'user' => $user,
             'form' => $form,
         ]);
