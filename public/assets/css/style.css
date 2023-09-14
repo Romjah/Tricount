@@ -80,8 +80,9 @@ a:hover {
 .img_res{
     display: block;
     width: 100%;
-    height: 400px;
+    height: 100%;
     max-width: 100%;
+    max-width: 400px;
 }
 
 .team-pic {
@@ -355,7 +356,8 @@ a:hover {
     overflow: hidden;
 }
 .iphone-hand {
-    padding: 20px 30px 0px 30px;
+    padding: 15% 30px 0px 30px;
+    margin-left: 20%;
 }
 .store:hover{
     background: #00ceb8;
