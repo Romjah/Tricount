@@ -104,7 +104,7 @@
                             }) }}
                         </div>
                         <div class="input-field">
-                            <input type="submit" class="submit" value="S'Inscrire">
+                            <input type="submit" class="submit" value="{{ button_label|default("S'Inscrire") }}">
                         </div>
                         <div class="signin">
                             <span>Déjà Inscrit ? <a href="{{ path('app_user_login') }}">Se Connecter</a></span>
