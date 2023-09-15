@@ -16,99 +16,102 @@
                     <img src="images/white.png" alt="">
                 </div>
                 <div class="col-md-6 right">
-                    <div class="input-box">
-                        <header>Inscription</header>
-                        <div class="input-field">
-                            {{ form_widget(form.name, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'name',
-                                    'required': 'required'
-                                }
-                            }) }}
-                            {{ form_label(form.name, 'Nom', {
-                                'label_attr': {
-                                    'for': 'name'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            {{ form_widget(form.firstName, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'firstName',
-                                    'required': 'required'
-                                }
-                            }) }}
-                            {{ form_label(form.firstName, 'Prénom', {
-                                'label_attr': {
-                                    'for': 'firstName'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            {{ form_widget(form.email, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'email',
-                                    'required': 'required',
-                                    'autocomplete': 'off'
-                                }
-                            }) }}
-                            {{ form_label(form.email, 'Adresse e-mail', {
-                                'label_attr': {
-                                    'for': 'email'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            {{ form_widget(form.telephone, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'telephone',
-                                    'required': 'required'
-                                }
-                            }) }}
-                            {{ form_label(form.telephone, 'Téléphone', {
-                                'label_attr': {
-                                    'for': 'telephone'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            {{ form_widget(form.password, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'pass',
-                                    'required': 'required'
-                                }
-                            }) }}
-                            {{ form_label(form.password, 'Mot de Passe', {
-                                'label_attr': {
-                                    'for': 'pass'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            {{ form_widget(form.confirmPassword, {
-                                'attr': {
-                                    'class': 'input',
-                                    'id': 'pass',
-                                    'required': 'required'
-                                }
-                            }) }}
-                            {{ form_label(form.confirmPassword, 'Confirmer le Mot de Passe', {
-                                'label_attr': {
-                                    'for': 'pass'
-                                }
-                            }) }}
-                        </div>
-                        <div class="input-field">
-                            <input type="submit" class="submit" value="{{ button_label|default("S'Inscrire") }}">
-                        </div>
-                        <div class="signin">
-                            <span>Déjà Inscrit ? <a href="{{ path('app_user_login') }}">Se Connecter</a></span>
-                        </div>
+                    <form action="{{ path('app_user_login') }}" method="POST">
+                        {{ form_widget(form._token) }}
+                        <div class="input-box">
+                            <header>Inscription</header>
+                            <div class="input-field">
+                                {{ form_widget(form.name, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'name',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.name, 'Nom', {
+                                    'label_attr': {
+                                        'for': 'name'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.firstName, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'firstName',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.firstName, 'Prénom', {
+                                    'label_attr': {
+                                        'for': 'firstName'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.email, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'email',
+                                        'required': 'required',
+                                        'autocomplete': 'off'
+                                    }
+                                }) }}
+                                {{ form_label(form.email, 'Adresse e-mail', {
+                                    'label_attr': {
+                                        'for': 'email'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.telephone, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'telephone',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.telephone, 'Téléphone', {
+                                    'label_attr': {
+                                        'for': 'telephone'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.password, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'pass',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.password, 'Mot de Passe', {
+                                    'label_attr': {
+                                        'for': 'pass'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.confirmPassword, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'pass',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.confirmPassword, 'Confirmer le Mot de Passe', {
+                                    'label_attr': {
+                                        'for': 'pass'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="submit" value="{{ button_label|default("S'Inscrire") }}">
+                            </div>
+                            <div class="signin">
+                                <span>Déjà Inscrit ? <a href="{{ path('app_user_login') }}">Se Connecter</a></span>
+                            </div>
+                        </form>
                     </div>  
                 </div>
             </div>
