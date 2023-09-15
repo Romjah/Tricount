@@ -1,4 +1,4 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_start(form, {'attr': {'class': 'custom-form'}}) }}
+    {{ form_widget(form, {'attr': {'class': 'custom-form-widget'}}) }}
+    <button class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

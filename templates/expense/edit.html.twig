@@ -2,12 +2,61 @@
 
 {% block title %}Edit Expense{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Votre style personnalisé ici */
+        .container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1d1d1d;
+        }
+
+        /* Autres styles... */
+
+        /* Style pour le formulaire */
+        .custom-form {
+            /* Ajoutez vos styles personnalisés ici */
+        }
+
+        /* Style pour les widgets de formulaire (champs de texte, etc.) */
+        .custom-form-widget {
+            /* Ajoutez vos styles personnalisés ici */
+        }
+
+        /* Style pour le bouton "Save" */
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        /* Le reste de votre style ici */
+    </style>
+{% endblock %}
+
 {% block body %}
-    <h1>Edit Expense</h1>
+    <div class="container mt-4">
+        <h1>Edit Expense</h1>
 
-    {{ include('expense/_form.html.twig', {'button_label': 'Update'}) }}
+        <form method="post" action="{{ path('app_expense_edit', {'id': expense.id}) }}">
+            {{ include('expense/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_expense_index') }}">back to list</a>
-
-    {{ include('expense/_delete_form.html.twig') }}
+            <div class="form-actions">
+                <a href="{{ path('app_expense_index') }}" class="btn btn-primary">Back to list</a>
+                {{ include('expense/_delete_form.html.twig') }}
+            </div>
+        </form>
+    </div>
 {% endblock %}
