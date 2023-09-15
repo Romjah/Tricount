@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Calcul;
 use App\Form\CalculType;
 use App\Repository\CalculRepository;
+use App\Service\CalculService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,7 +19,14 @@ class CalculController extends AbstractController
     private $twig;
     private $calculService;
 
-    public function __construct(Environment $twig)
+
+    /**
+     * ServiceController constructor
+     * @param CalculService $calculService
+     * 
+     */
+
+    public function __construct(Environment $twig, CalculService $calculService) 
     {
         $this->twig = $twig;
         $this->calculService = $calculService;
@@ -29,9 +37,8 @@ class CalculController extends AbstractController
     #[Route('/', name: 'app_calcul_index', methods: ['GET'])]
     public function index($group)
     {
-        return $this->twig->registerUndefinedTokenParserCallback('calcul/index.html.twig', [
-        ]);
-        return new Response($this->calculService->calcul($group));
+        $content = $this->twig->render('calcul/index.html.twig', ['calcul'=> $this->calculService->calcul($group)]);
+        return new Response($content);
     }
 
 
