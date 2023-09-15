@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Calcul index{% endblock %}
+{% block title %}Balance{% endblock %}
 
 {% block body %}
     <h1>Calcul index</h1>
@@ -9,17 +9,14 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>actions</th>
+                <th>Balance</th>
             </tr>
         </thead>
         <tbody>
-        {% for calcul in calculs %}
+        {% for userId, balance in calcul %}
             <tr>
-                <td>{{ calcul.id }}</td>
-                <td>
-                    <a href="{{ path('app_calcul_show', {'id': calcul.id}) }}">show</a>
-                    <a href="{{ path('app_calcul_edit', {'id': calcul.id}) }}">edit</a>
-                </td>
+                <td>{{ userId }}</td>
+                <td>{{ balance }}</td>
             </tr>
         {% else %}
             <tr>
