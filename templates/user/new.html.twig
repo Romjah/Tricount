@@ -20,6 +20,7 @@
                         {{ form_widget(form._token) }}
                         <div class="input-box">
                             <header>Inscription</header>
+                            {{ form_start(form) }}
                             <div class="input-field">
                                 {{ form_widget(form.name, {
                                     'attr': {
@@ -111,7 +112,8 @@
                             <div class="signin">
                                 <span>Déjà Inscrit ? <a href="{{ path('app_user_login') }}">Se Connecter</a></span>
                             </div>
-                        </div>  
+                            {{ form_end(form) }}
+                        </div>
                     </form>
                 </div>
             </div>
