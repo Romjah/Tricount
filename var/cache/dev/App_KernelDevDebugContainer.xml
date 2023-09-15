@@ -334,6 +334,8 @@
     <service id="App\Controller\CalculController" class="App\Controller\CalculController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="App\Service\CalculService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\CalculController"/>
       </call>
@@ -497,8 +499,9 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Services\CalculService" class="App\Services\CalculService" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;App\Services\CalculService&quot; to be defined in file &quot;/Users/ramjoh/documents_local/Tricount/vendor/composer/../../src/Services/CalculService.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
+    <service id="App\Service\CalculService" class="App\Service\CalculService" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>
@@ -526,7 +529,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.IOMEbZg"/>
+      <argument type="service" id=".service_locator.T0comup"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3090,7 +3093,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.IOMEbZg"/>
+      <argument type="service" id=".service_locator.T0comup"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <argument type="service" id="request_stack"/>
@@ -7067,12 +7070,6 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.2Q9g_Yk" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="calculRepository" type="service_closure" id="App\Repository\CalculRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.CsMkqUa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7282,12 +7279,11 @@
         <argument key="user" type="service_closure" id=".errored..service_locator.rvMNZGh.App\Entity\User"/>
       </argument>
     </service>
-    <service id=".service_locator.IOMEbZg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.T0comup" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\CalculController::delete" type="service_closure" id=".service_locator.4VeX4mk"/>
         <argument key="App\Controller\CalculController::edit" type="service_closure" id=".service_locator.4VeX4mk"/>
-        <argument key="App\Controller\CalculController::index" type="service_closure" id=".service_locator.2Q9g_Yk"/>
         <argument key="App\Controller\CalculController::new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\CalculController::show" type="service_closure" id=".service_locator.AvmmsDe"/>
         <argument key="App\Controller\ExpenseAttachmentController::delete" type="service_closure" id=".service_locator.sd_FyxN"/>
@@ -7346,7 +7342,6 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Controller\CalculController:delete" type="service_closure" id=".service_locator.4VeX4mk"/>
         <argument key="App\Controller\CalculController:edit" type="service_closure" id=".service_locator.4VeX4mk"/>
-        <argument key="App\Controller\CalculController:index" type="service_closure" id=".service_locator.2Q9g_Yk"/>
         <argument key="App\Controller\CalculController:new" type="service_closure" id=".service_locator.CsMkqUa"/>
         <argument key="App\Controller\CalculController:show" type="service_closure" id=".service_locator.AvmmsDe"/>
         <argument key="App\Controller\ExpenseAttachmentController:delete" type="service_closure" id=".service_locator.sd_FyxN"/>
@@ -9483,7 +9478,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.7nzbL4K" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.IOMEbZg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.T0comup"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9514,7 +9509,7 @@
     <service id=".service_locator.lptY43e" alias=".service_locator.aMXBPGT"/>
     <service id=".service_locator.UuGX.Jx" alias=".service_locator.MEbEybr"/>
     <service id=".service_locator.R0Sb2kd" alias=".service_locator.rvMNZGh"/>
-    <service id=".service_locator.DjXQcT0" alias=".service_locator.IOMEbZg"/>
+    <service id=".service_locator.GMWkyX4" alias=".service_locator.T0comup"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.OzNHaod" alias=".service_locator.V1gu9q7"/>
     <service id=".service_locator.jij13qc" alias=".service_locator.PBToVFE"/>
@@ -9537,7 +9532,6 @@
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id="security.event_dispatcher.main" alias="debug.security.event_dispatcher.main"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
-    <service id=".service_locator.0td6_vI" alias=".service_locator.2Q9g_Yk"/>
     <service id=".service_locator.9e2t_lq" alias=".service_locator.CsMkqUa"/>
     <service id=".service_locator.7mpVIXn" alias=".service_locator.AvmmsDe"/>
     <service id=".service_locator.tWBX4o1" alias=".service_locator.4VeX4mk"/>
