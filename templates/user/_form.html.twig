@@ -21,6 +21,10 @@
     {{ form_label(form.CreateDateTime, 'Date de création', {'label_attr': {'class': 'control-label'}}) }}
     {{ form_widget(form.CreateDateTime, {'attr': {'class': 'form-control', 'type': 'date'}}) }}
 </div>
+<div class="form-group">
+    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+    <label for="agreeTerms">J'accepte les termes et conditions de Tricount</label>
+</div>
 
 <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
