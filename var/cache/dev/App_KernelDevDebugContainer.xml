@@ -335,7 +335,7 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="twig"/>
-      <argument type="service" id="App\Service\CalculService"/>
+      <argument type="service" id="App\Services\CalculService"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\CalculController"/>
       </call>

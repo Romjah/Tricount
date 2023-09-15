@@ -4,8 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Calcul;
 use App\Form\CalculType;
-use App\Repository\CalculRepository;
-use App\Service\CalculService;
+use App\Services\CalculService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
