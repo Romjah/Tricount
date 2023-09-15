@@ -11,6 +11,8 @@
                 <th>Id</th>
                 <th>Amount</th>
                 <th>Date</th>
+                <th>Receiver</th>
+                <th>Sender</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,7 +21,9 @@
             <tr>
                 <td>{{ settlement.id }}</td>
                 <td>{{ settlement.amount }}</td>
-                <td>{{ settlement.date ? settlement.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ settlement.CreateDateTime ? settlement.CreateDateTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ settlement.payee }}</td>
+                <td>{{ settlement.payer }}</td>
                 <td>
                     <a href="{{ path('app_settlement_show', {'id': settlement.id}) }}">show</a>
                     <a href="{{ path('app_settlement_edit', {'id': settlement.id}) }}">edit</a>

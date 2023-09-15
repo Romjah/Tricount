@@ -30,11 +30,12 @@ class UserController extends AbstractController
     }
 
     #[Route('/', name: 'app_user_group', methods: ['GET'])]
-    public function groupUsers(UserRepository $userRepository): Response
+    public function groupUsers(UserRepository $userRepository, $group): Response
     {
         $em = $this->entityManager->getRepository(Group::class);
+        $group = $em->findById($group);
         return $this->render('user/index.html.twig', [
-            'users' => $userRepository->findById($em),
+            'users' => $userRepository->findById($group),
         ]);
     }
 

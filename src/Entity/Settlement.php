@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\SettlementRepository;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -17,9 +18,6 @@ class Settlement
     #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
     private ?string $amount = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
-
     #[ORM\ManyToOne(inversedBy: 'settlements')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $payer = null;
@@ -27,6 +25,14 @@ class Settlement
     #[ORM\ManyToOne(inversedBy: 'settlements')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $payee = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $CreateDateTime = null;
+
+    public function __construct()
+    {
+        $this->CreateDateTime = new DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -45,14 +51,14 @@ class Settlement
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getCreateDateTime(): ?DateTime
     {
-        return $this->date;
+        return $this->CreateDateTime;
     }
 
-    public function setDate(\DateTimeInterface $date): static
+    public function setCreateDateTime(DateTime $CreateDateTime): static
     {
-        $this->date = $date;
+        $this->CreateDateTime = $CreateDateTime;
 
         return $this;
     }

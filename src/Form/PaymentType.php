@@ -13,9 +13,8 @@ class PaymentType extends AbstractType
     {
         $builder
             ->add('amount')
-            ->add('date')
+            ->add('CreateDateTime')
             ->add('payer')
-            ->add('payee')
         ;
     }
 
