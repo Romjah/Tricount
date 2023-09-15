@@ -14,11 +14,27 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/user')]
 class UserController extends AbstractController
 {
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager) 
+    { 
+        $this->entityManager = $entityManager;
+    }
+
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
+        ]);
+    }
+
+    #[Route('/', name: 'app_user_group', methods: ['GET'])]
+    public function groupUsers(UserRepository $userRepository): Response
+    {
+        $em = $this->entityManager->getRepository(Group::class);
+        return $this->render('user/index.html.twig', [
+            'users' => $userRepository->findById($em),
         ]);
     }
 
