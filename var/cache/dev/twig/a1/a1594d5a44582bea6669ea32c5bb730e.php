@@ -63,10 +63,10 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         ";
         // line 21
         $this->displayBlock('body', $context, $blocks);
-        // line 63
+        // line 64
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 71
+        // line 72
         echo "    </body>
 </html>
 ";
@@ -176,16 +176,20 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         echo "\">Account</a></li>
                     <li><a href=\"";
         // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_payment_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_payment_index");
         echo "\">Payment</a></li>
                     <li><a href=\"";
         // line 39
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_settlement_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_settlement_index");
         echo "\">Settlement</a></li>
                     <li><a href=\"";
         // line 40
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_expense_new");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_expense_index");
         echo "\">Expense</a></li>
+                    <li><a href=\"";
+        // line 41
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_group_index");
+        echo "\">Groupes</a></li>
                 </ul>
             </nav>
 
@@ -203,9 +207,9 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
             <!-- ****************************** Banner ************************** -->
             <div>
                 ";
-        // line 57
+        // line 58
         $this->displayBlock('content', $context, $blocks);
-        // line 60
+        // line 61
         echo "            </div>
             
         ";
@@ -217,7 +221,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
     }
 
-    // line 57
+    // line 58
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -227,7 +231,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 58
+        // line 59
         echo "                    <!-- Contenu spécifique de chaque page -->
                 ";
         
@@ -238,7 +242,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
     }
 
-    // line 63
+    // line 64
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -248,24 +252,24 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 64
+        // line 65
         echo "            <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery-2.1.3.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 65
+        // line 66
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 66
+        // line 67
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/wow.min.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 67
+        // line 68
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl.carousel.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 68
+        // line 69
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/script.js"), "html", null, true);
         echo "\"></script>
             
@@ -285,7 +289,7 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
 
     public function getDebugInfo()
     {
-        return array (  269 => 68,  265 => 67,  261 => 66,  257 => 65,  252 => 64,  242 => 63,  231 => 58,  221 => 57,  209 => 60,  207 => 57,  187 => 40,  183 => 39,  179 => 38,  175 => 37,  158 => 22,  148 => 21,  132 => 13,  128 => 12,  124 => 11,  120 => 10,  116 => 9,  111 => 8,  101 => 7,  82 => 5,  70 => 71,  67 => 63,  65 => 21,  61 => 19,  59 => 7,  54 => 5,  48 => 1,);
+        return array (  273 => 69,  269 => 68,  265 => 67,  261 => 66,  256 => 65,  246 => 64,  235 => 59,  225 => 58,  213 => 61,  211 => 58,  191 => 41,  187 => 40,  183 => 39,  179 => 38,  175 => 37,  158 => 22,  148 => 21,  132 => 13,  128 => 12,  124 => 11,  120 => 10,  116 => 9,  111 => 8,  101 => 7,  82 => 5,  70 => 72,  67 => 64,  65 => 21,  61 => 19,  59 => 7,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -327,9 +331,10 @@ class __TwigTemplate_3994b5ff96d42bc3ac661ea5acb6e2cd extends Template
                     <li><a href=\"#team\">Development Team</a></li>
                     <li><a href=\"#contact\">Contact us</a></li>
                     <li><a href=\"{{ path('app_user_account') }}\">Account</a></li>
-                    <li><a href=\"{{ path('app_payment_new') }}\">Payment</a></li>
-                    <li><a href=\"{{ path('app_settlement_new') }}\">Settlement</a></li>
-                    <li><a href=\"{{ path('app_expense_new') }}\">Expense</a></li>
+                    <li><a href=\"{{ path('app_payment_index') }}\">Payment</a></li>
+                    <li><a href=\"{{ path('app_settlement_index') }}\">Settlement</a></li>
+                    <li><a href=\"{{ path('app_expense_index') }}\">Expense</a></li>
+                    <li><a href=\"{{ path('app_group_index') }}\">Groupes</a></li>
                 </ul>
             </nav>
 

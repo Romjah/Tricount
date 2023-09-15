@@ -2,35 +2,97 @@
 
 {% block title %}Groupes{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style pour la table */
+        .table {
+            background-color: #fff;
+        }
+
+        .table th, .table td {
+            border: none;
+        }
+
+        .table th {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        /* Style pour les boutons d'action */
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .action-button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .btn-show {
+            background-color: #3498db;
+        }
+
+        .btn-show:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-edit {
+            background-color: #f1c40f;
+        }
+
+        .btn-edit:hover {
+            background-color: #d4ac0d;
+        }
+
+        .btn-balance {
+            background-color: #27ae60;
+        }
+
+        .btn-balance:hover {
+            background-color: #219a52;
+        }
+
+        /* Le reste de votre style ici */
+    </style>
+{% endblock %}
+
 {% block body %}
-    <h1>Group</h1>
+    <div class="container mt-4">
+        <h1>Groupes</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for group in groups %}
-            <tr>
-                <td>{{ group.id }}</td>
-                <td>{{ group.name }}</td>
-                <td>
-                    <a href="{{ path('app_group_show', {'id': group.id}) }}">show</a>
-                    <a href="{{ path('app_group_edit', {'id': group.id}) }}">edit</a>
-                    <a href="{{ path('app_calcul_index', {'group': group.id}) }}">Balance</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for group in groups %}
+                <tr>
+                    <td>{{ group.id }}</td>
+                    <td>{{ group.name }}</td>
+                    <td class="action-buttons">
+                        <a href="{{ path('app_group_show', {'id': group.id}) }}" class="btn btn-show">Show</a>
+                        <a href="{{ path('app_group_edit', {'id': group.id}) }}" class="btn btn-edit">Edit</a>
+                        <a href="{{ path('app_calcul_index', {'group': group.id}) }}" class="btn btn-balance">Balance</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('app_group_new') }}">Create new</a>
+        <a href="{{ path('app_group_new') }}" class="btn btn-primary">Create new</a>
+    </div>
 {% endblock %}
