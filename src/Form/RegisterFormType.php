@@ -6,6 +6,8 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use App\Validator\Constraints\PasswordMatch;
 
 class RegisterFormType extends AbstractType
 {
@@ -16,8 +18,12 @@ class RegisterFormType extends AbstractType
             ->add('firstName')
             ->add('email')
             ->add('telephone')
-            ->add('password')
-            ->add('confirmPassword')
+            ->add('password', PasswordType::class, [
+                'label' => 'Mot de Passe',
+                ])
+            ->add('confirmPassword', PasswordType::class, [
+                'label' => 'Confirmer le Mot de Passe',
+                ])
             ->add('CreateDateTime')
         ;
     }
