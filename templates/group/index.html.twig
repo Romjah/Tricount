@@ -21,6 +21,7 @@
                 <td>
                     <a href="{{ path('app_group_show', {'id': group.id}) }}">show</a>
                     <a href="{{ path('app_group_edit', {'id': group.id}) }}">edit</a>
+                    <a href="{{ path('app_calcul_index', {'group': group.id}) }}">Balance</a>
                 </td>
             </tr>
         {% else %}

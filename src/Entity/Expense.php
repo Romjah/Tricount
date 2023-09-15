@@ -115,8 +115,10 @@ class Expense
 
     public function __toString(): string
     {
-        return $this->getDescription(); // Vous pouvez personnaliser cette méthode en fonction de vos besoins.
+        return $this->getDescription();
+        return $this->getGroupTricount(); // Vous pouvez personnaliser cette méthode en fonction de vos besoins.
     }
+
     
     /**
      * @return Collection<int, ExpenseParticipant>

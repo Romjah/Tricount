@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Calcul;
+use App\Entity\Group;
 use App\Form\CalculType;
-use App\Repository\CalculRepository;
-use App\Service\CalculService;
+use App\Services\CalculService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,6 +18,7 @@ class CalculController extends AbstractController
 {
     private $twig;
     private $calculService;
+    private $entityManager;
 
 
     /**
@@ -26,17 +27,20 @@ class CalculController extends AbstractController
      * 
      */
 
-    public function __construct(Environment $twig, CalculService $calculService) 
-    {
+    public function __construct(Environment $twig, CalculService $calculService, EntityManagerInterface $entityManager) 
+    { 
         $this->twig = $twig;
         $this->calculService = $calculService;
+        $this->entityManager = $entityManager;
     }
+   
     
-    
-    
-    #[Route('/', name: 'app_calcul_index', methods: ['GET'])]
+    #[Route('/{group}', name: 'app_calcul_index', methods: ['GET'])]
     public function index($group)
     {
+         
+        $em = $this->entityManager->getRepository(Group::class);
+        $group = $em->findOneById($group);
         $content = $this->twig->render('calcul/index.html.twig', ['calcul'=> $this->calculService->calcul($group)]);
         return new Response($content);
     }
