@@ -10,17 +10,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Twig\Environment;
 
 #[Route('/calcul')]
 class CalculController extends AbstractController
 {
-    #[Route('/', name: 'app_calcul_index', methods: ['GET'])]
-    public function index(CalculRepository $calculRepository): Response
+    private $twig;
+    private $calculService;
+
+    public function __construct(Environment $twig)
     {
-        return $this->render('calcul/index.html.twig', [
-            'calculs' => $calculRepository->findAll(),
-        ]);
+        $this->twig = $twig;
+        $this->calculService = $calculService;
     }
+    
+    
+    
+    #[Route('/', name: 'app_calcul_index', methods: ['GET'])]
+    public function index($group)
+    {
+        return $this->twig->registerUndefinedTokenParserCallback('calcul/index.html.twig', [
+        ]);
+        return new Response($this->calculService->calcul($group));
+    }
+
+
+
+
+
 
     #[Route('/new', name: 'app_calcul_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
