@@ -1,75 +1,74 @@
 {% extends 'base.html.twig' %}
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1d1d1d;
+        }
+
+        .table {
+            background-color: #fff;
+        }
+
+        .table th, .table td {
+            border: none;
+        }
+
+        .table thead th {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        .btn-warning {
+            background-color: #f1c40f;
+            border-color: #f1c40f;
+            color: #fff;
+        }
+
+        .btn-warning:hover {
+            background-color: #d4ac0d;
+            border-color: #d4ac0d;
+        }
+
+        .btn-success {
+            background-color: #27ae60;
+            border-color: #27ae60;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background-color: #219a52;
+            border-color: #219a52;
+        }
+
+        .center-table {
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock %}
 {% block content %}
-    {% block title %}Liste des utilisateurs{% endblock %}
-
-    {% block stylesheets %}
-        {{ parent() }}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <style>
-            .container {
-                background-color: #f2f2f2;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
-
-            h1 {
-                color: #1d1d1d;
-            }
-
-            .table {
-                background-color: #fff;
-            }
-
-            .table th, .table td {
-                border: none;
-            }
-
-            .table thead th {
-                background-color: #2c3e50;
-                color: #fff;
-            }
-
-            .btn-primary {
-                background-color: #3498db;
-                border-color: #3498db;
-                color: #fff;
-            }
-
-            .btn-primary:hover {
-                background-color: #2980b9;
-                border-color: #2980b9;
-            }
-
-            .btn-warning {
-                background-color: #f1c40f;
-                border-color: #f1c40f;
-                color: #fff;
-            }
-
-            .btn-warning:hover {
-                background-color: #d4ac0d;
-                border-color: #d4ac0d;
-            }
-
-            .btn-success {
-                background-color: #27ae60;
-                border-color: #27ae60;
-                color: #fff;
-            }
-
-            .btn-success:hover {
-                background-color: #219a52;
-                border-color: #219a52;
-            }
-
-            .center-table {
-                text-align: center;
-                margin: 0 auto;
-            }
-        </style>
-    {% endblock %}
-
     {% block body %}
         <div class="container mt-4">
             <h1>Liste des utilisateurs</h1>
