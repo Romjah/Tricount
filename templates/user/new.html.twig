@@ -1,11 +1,123 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New User{% endblock %}
-
-{% block body %}
-    <h1>Create new User</h1>
-
-    {{ include('user/_form.html.twig') }}
-
-    <a href="{{ path('app_user_index') }}">back to list</a>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset("assets/css/connect.css") }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>S'Inscrire</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container main">
+            <div class="row">
+                <div class="col-md-6 side-image">
+                    <img src="images/white.png" alt="">
+                </div>
+                <div class="col-md-6 right">
+                    <form action="{{ path('app_user_login') }}" method="POST">
+                        {{ form_widget(form._token) }}
+                        <div class="input-box">
+                            <header>Inscription</header>
+                            {{ form_start(form) }}
+                            <div class="input-field">
+                                {{ form_widget(form.name, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'name',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.name, 'Nom', {
+                                    'label_attr': {
+                                        'for': 'name'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.firstName, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'firstName',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.firstName, 'Prénom', {
+                                    'label_attr': {
+                                        'for': 'firstName'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.email, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'email',
+                                        'required': 'required',
+                                        'autocomplete': 'on'
+                                    }
+                                }) }}
+                                {{ form_label(form.email, 'Adresse e-mail', {
+                                    'label_attr': {
+                                        'for': 'email'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.telephone, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'telephone',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.telephone, 'Téléphone', {
+                                    'label_attr': {
+                                        'for': 'telephone'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.password, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'pass',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.password, 'Mot de Passe', {
+                                    'label_attr': {
+                                        'for': 'pass'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                {{ form_widget(form.confirmPassword, {
+                                    'attr': {
+                                        'class': 'input',
+                                        'id': 'pass',
+                                        'required': 'required'
+                                    }
+                                }) }}
+                                {{ form_label(form.confirmPassword, 'Confirmer le Mot de Passe', {
+                                    'label_attr': {
+                                        'for': 'pass'
+                                    }
+                                }) }}
+                            </div>
+                            <div class="input-field">
+                                <input type="submit" class="submit" value="{{ button_label|default("S'Inscrire") }}">
+                            </div>
+                            <div class="signin">
+                                <span>Déjà Inscrit ? <a href="{{ path('app_user_login') }}">Se Connecter</a></span>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

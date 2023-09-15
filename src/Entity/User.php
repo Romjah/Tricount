@@ -8,12 +8,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
 #[ORM\HasLifecycleCallbacks()]
-class User
+class User implements PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -32,8 +32,16 @@ class User
     #[ORM\Column]
     private ?int $telephone = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $password = null;
+    
+    #[ORM\Column(length: 255)]
+    private ?string $confirmPassword = null;
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $CreateDateTime = null;
+
+    private ?bool $rememberMe = false;
 
     #[ORM\OneToMany(mappedBy: 'creator', targetEntity: Expense::class)]
     private Collection $expenses;
@@ -121,6 +129,30 @@ class User
         return $this;
     }
 
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): static
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getConfirmPassword(): ?string
+    {
+        return $this->confirmPassword;
+    }
+
+    public function setConfirmPassword(string $confirmPassword): static
+    {
+        $this->confirmPassword = $confirmPassword;
+
+        return $this;
+    }
+
     public function getCreateDateTime(): ?DateTime
     {
         return $this->CreateDateTime;
@@ -129,6 +161,18 @@ class User
     public function setCreateDateTime(DateTime $CreateDateTime): static
     {
         $this->CreateDateTime = $CreateDateTime;
+
+        return $this;
+    }
+
+    public function getRememberMe(): ?bool
+    {
+        return $this->rememberMe;
+    }
+
+    public function setRememberMe(bool $rememberMe): self
+    {
+        $this->rememberMe = $rememberMe;
 
         return $this;
     }
